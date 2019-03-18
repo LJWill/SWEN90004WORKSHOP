@@ -121,6 +121,9 @@ public class ConQuick extends Thread{
       a[i] = rand.nextInt();
     }
 
+    double nano = Math.pow(10, -9);
+    long startTime = System.nanoTime();
+
     //sort the array
     ConQuick parentThread = new ConQuick(a, 0, a.length-1);
     parentThread.start();
@@ -129,6 +132,9 @@ public class ConQuick extends Thread{
       parentThread.join();
     }catch(Exception e){}
 
-    System.out.println(java.util.Arrays.toString(a));
+    long endTime = System.nanoTime();
+
+    System.out.println( (endTime-startTime) * nano + "s");
+    // System.out.println(java.util.Arrays.toString(a));
   }
 }

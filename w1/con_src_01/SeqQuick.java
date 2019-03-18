@@ -108,9 +108,16 @@ public class SeqQuick {
       a[i] = rand.nextInt();
     }
 
+    double nano = Math.pow(10, -9);
+    long startTime = System.nanoTime();
+
     //sort the array
     new SeqQuick(a, 0, a.length-1).quicksort();
   
-    System.out.println(java.util.Arrays.toString(a));
+    long endTime = System.nanoTime();
+
+    System.out.println( (endTime-startTime) * nano + "s" );
+    
+    // System.out.println(java.util.Arrays.toString(a));
   }
 }
